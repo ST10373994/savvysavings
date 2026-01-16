@@ -19,8 +19,7 @@ Welcome to the **Savvy Savings App** – your all-in-one mobile solution for mas
 9. [🚦 GitHub Actions & Workflow Automation](#github-actions--workflow-automation)
 10. [⚡ Quick Start](#quick-start)
 11. [📦 Releases & APK Download](#releases--apk-download)
-12. [👥 Team Members](#team-members)
-13. [🎥 Demo Video](#demo-video)
+12. [🎥 Demo Video](#demo-video)
 
 ---
 
@@ -285,15 +284,7 @@ Thanks to GitHub Actions, every commit is automatically validated, builds remain
 
 ---
 
-## 👥 Team Members
 
-| Name               | Student ID |
-| ------------------ | ---------- |
-| Blaise Mikka de Gier     | ST10249838 |
-| Sashveer Lakhan Ramjathan | ST10361554 |
-| Shravan Ramjathan  | ST10247982 |
-
----
 
 ## 🎥 Demo Video
 
