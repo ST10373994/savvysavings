@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme for Night Mode -->
+    <style name="Base.Theme.Strategicsavingsbudgetapp" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/brand_primary</item>
+        <item name="android:windowBackground">@color/bg_dark</item>
+
+        <!-- Important: Use White/Text Primary for Night mode as well -->
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+
+        <item name="android:statusBarColor">@color/bg_dark</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <!-- Custom property used in your layouts -->
+    <color name="text_field_background_color">#1C1C1C</color>
+</resources>

@@ -1,0 +1,235 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Savvy Savings</string>
+
+    <!-- Supabase Credentials -->
+    <string name="supabase_url">https://bxpptnwmvrqqvdwpzucp.supabase.co</string>
+    <string name="supabase_api_key" tools:ignore="Typos">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ4cHB0bndtdnJxcXZkd3B6dWNwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQxNDU0OTUsImV4cCI6MjA1OTcyMTQ5NX0.rl2dikHc7MA6ECiBUvgD5LnHctCujKq3AU9p-nh-1CI</string>
+    <string name="supabase_user_profile_bucket_name">user-profile-pictures</string>
+    <string name="supabase_receipt_bucket_name">expense-reciepts</string>
+
+    <!-- Currency Converter -->
+    <string name="currency_freaks">90f448f82cb349b588016c06de3f5969</string>
+    <!--Login -->
+    <string name="login_title">Welcome Back</string>
+    <string name="email_hint">Email Address</string>
+    <string name="password_hint">Password</string>
+    <string name="register_text">Don\'t have an account? Register</string>
+    <string name="logout_title">Logout</string>
+    <string name="tv_enter_your_details_to_login">Enter Your Details To Login</string>
+    <string name="btn_login">Login</string>
+
+    <!-- Register -->
+    <string name="register_title">Create an Account</string>
+    <string name="profile_image_desc">Profile picture</string>
+    <string name="add_profile_picture">Add Profile Picture</string>
+    <string name="username_hint">Username</string>
+    <string name="full_name_hint">Full name</string>
+    <string name="confirm_password_hint">Confirm Password</string>
+    <string name="create_account">Create Account</string>
+    <string name="login_prompt_text">Already have an account? Login Here</string>
+    <string name="tv_enter_your_details_to_register">Enter your details to register</string>
+    <string name="btn_register">Register</string>
+
+    <!-- NavBar -->
+    <string name="nav_home">Home</string>
+    <string name="nav_analysis">Analysis</string>
+    <string name="nav_transactions">Transactions</string>
+    <string name="nav_savings">Savings</string>
+    <string name="nav_profile">Profile</string>
+
+    <!-- Profile Settings -->
+    <string name="profile_title">Profile</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="change_password">Change Password</string>
+    <string name="update_password">Update Password</string>
+    <string name="tv_sync_database">Sync Database</string>
+    <string name="btn_sync_now">Sync Now</string>
+    <string name="tv_last_synced">Last synced: 31 Jan 2025, 12:32</string>
+
+    <!-- Expense -->
+    <string name="enter_date">Date</string>
+    <string name="amount">Amount</string>
+
+    <!-- Home -->
+    <string name="tv_welcome_back">Welcome Back,</string>
+    <string name="tv_place_holder_name">Place Holder Name</string>
+    <string name="cd_rewards_button">Rewards Button</string>
+    <string name="tv_quick_actions">Quick Actions</string>
+    <string name="cd_add_income_button">Add Income Button</string>
+    <string name="tv_add_income">Add Income</string>
+    <string name="cd_add_expense_button">Add Expense Button</string>
+    <string name="tv_add_expense">Add Expense</string>
+    <string name="cd_add_savings_button">Add Savings Button</string>
+    <string name="tv_add_savings">Add Savings</string>
+    <string name="tv_recent_transactions">Recent Transactions</string>
+    <string name="cd_list_of_recent_transactions">List of recent transactions</string>
+    <string name="tv_no_transactions_to_display">No Transactions to display</string>
+    <string name="tv_trans_chart_title">This Month\'s Summary</string>
+
+    <!-- Dialogue: Budget Setup -->
+    <string name="budget_setup">Budget Setup</string>
+    <string name="minimum_monthly_income">Minimum Monthly Income</string>
+    <string name="minimum_monthly_income_hint">Minimum Monthly Income</string>
+    <string name="maximum_monthly_expenses">Maximum Monthly Expenses</string>
+    <string name="maximum_monthly_expenses_hint">Maximum Monthly Expenses</string>
+    <string name="welcome_title">Welcome to Budget Planner!</string>
+    <string name="description_title">Let\'s setup your budget to unlock the app\'s full potential. Create spending limits and income goals to stay on track!</string>
+
+    <!-- Item: Recent Transaction -->
+    <string name="cd_transaction_icon">Transaction Icon</string>
+    <string name="tv_transaction_title">Transaction Title</string>
+    <string name="tv_transaction_date">Transaction Date</string>
+    <string name="tv_transaction_type">Transaction Type</string>
+    <string name="tv_transaction_amount">Amount</string>
+
+    <!-- Recent Transactions Adapter -->
+    <string name="tv_transaction_type_expense">Expense</string>
+    <string name="tv_transaction_type_income">Income</string>
+    <string name="settings_title">Settings</string>
+
+
+    <!-- Notifications -->
+    <string name="notifications_title">Notifications</string>
+
+    <!-- Budgeting -->
+    <string name="budgeting_title">Budget Settings</string>
+
+    <!-- Themes-->
+    <string name="themes_title">Themes</string>
+
+    <!-- Transaction History -->
+    <string name="tv_title_transaction_history">Transaction History</string>
+    <string name="cd_income_arrow">Income Arrow</string>
+    <string name="tv_income">Income</string>
+    <string name="tv_total_income">Total Income</string>
+    <string name="cd_expense_arrow">Expense Arrow</string>
+    <string name="tv_expense">Expense</string>
+    <string name="tv_total_expense">Total Expense</string>
+    <string name="tv_transactions">Transactions</string>
+    <string name="cd_list_of_income_and_expense_transactions">List of income and expense transactions</string>
+    <string name="cd_filter_by_date_range_button">Filter by date range button</string>
+    <string name="chip_7_days">7 Days</string>
+    <string name="chip_14_days">14 Days</string>
+    <string name="chip_30_days">30 Days</string>
+
+    <!-- Item: Transaction History -->
+    <string name="tv_transaction_category">Category</string>
+
+    <!-- Transaction History Adapter -->
+    <string name="content_no_category">No Category</string>
+    <string name="tv_transaction_type_savings">Savings</string>
+
+    <!-- Date Range Dialog -->
+    <string name="tv_title">Choose a date range to filter</string>
+    <string name="tv_hint_start_date">Start Date</string>
+    <string name="tv_hint_end_date">End Date</string>
+    <string name="btn_filter">Filter</string>
+    <string name="btn_text_clear_filter">Clear Filter</string>
+
+    <!-- Dialog: Income -->
+    <string name="tv_income_title">Income Title</string>
+    <string name="tv_income_amount">R 0.00</string>
+    <string name="tv_income_date">Date: 2024–01–01</string>
+    <string name="tv_income_description">Description goes here</string>
+    <string name="btn_income_close">Close</string>
+
+    <!-- Dialog: Savings -->
+    <string name="tv_saving_title">Saving Title</string>
+    <string name="tv_savings_amount">R 0.00</string>
+    <string name="tv_savings_date">Date: 2024–01–01</string>
+    <string name="tv_savings_description">Description goes here</string>
+    <string name="tv_savings_goal_name">Saving Goal Name goes here</string>
+    <string name="btn_savings_close">Close</string>
+
+    <!-- Dialog: Expense -->
+    <string name="tv_expense_title">Expense Title</string>
+    <string name="tv_expense_amount">R 0.00</string>
+    <string name="tv_expense_date">Date: 2024–01–01</string>
+    <string name="tv_expense_description">Description goes here</string>
+    <string name="tv_expense_category">Expense Category goes here</string>
+    <string name="cd_receipt_image">Receipt Image</string>
+    <string name="btn_expense_close">Close</string>
+
+    <!-- Income History -->
+    <string name="tv_title_income_history">Income History</string>
+    <string name="cd_back_button">Back Button</string>
+    <string name="cd_list_of_income_transactions">List of Income Transactions</string>
+    <string name="tv_minimum_income_goal">Minimum Income Goal: R5,000</string>
+    <string name="tv_progress_percentage">40% towards goal</string>
+
+    <!-- Expense History -->
+    <string name="tv_title_expense_history">Expense History</string>
+    <string name="tv_maximum_expense_limit">Maximum Expense Limit: R30 000</string>
+    <string name="tv_expense_progress_percentage">55% towards limit</string>
+
+    <!-- Savings Goals -->
+    <string name="tv_title_savings_goals">Savings</string>
+    <string name="tv_rv_title_goals">Goals</string>
+    <string name="cd_list_of_saving_goals_created_by_the_user">List of Saving Goals created by the user</string>
+    <string name="tv_no_savings_goals_created">No Savings Goals created yet</string>
+    <string name="cd_create_a_new_savings_goal">Create a new savings goal</string>
+
+    <!-- Item: Savings Goal -->
+    <string name="tv_goal_title">Emergency Fund</string>
+    <string name="tv_target_amount">Target: R5,000</string>
+    <string name="tv_end_date">Ends: 2025–12–31</string>
+    <string name="tv_savings_progress_percentage">65%% saved</string>
+
+    <!-- Savings Goal Activity -->
+    <string name="tv_title_savings_goal">Savings Goal</string>
+    <string name="tv_savings_goal_title">Title</string>
+    <string name="tv_savings_target_amount">Target Amount</string>
+    <string name="tv_savings_goal_end_date">End Date</string>
+    <string name="tv_description">Description</string>
+    <string name="cd_add_saving_button">Add Saving Button</string>
+    <string name="cd_list_of_savings_transactions_for_the_goal">List of savings transactions for the goal</string>
+
+
+    <!-- Analysis -->
+    <string name="tv_categories">Categories</string>
+    <string name="cd_create_a_new_expense_category">Create a new expense category</string>
+    <string name="cd_list_of_expense_categories_created_by_the_user">List of expense categories created by the user</string>
+    <string name="tv_no_expense_categories_created">No expense categories created</string>
+    <string name="tv_title_expense_categories">Expense Categories</string>
+
+    <!-- Item: Expense Category -->
+    <string name="cd_category_icon">Category Icon</string>
+    <string name="tv_expense_category_title">Groceries</string>
+    <string name="tv_maximum_monthly_limit">Maximum Monthly Limit: R5600</string>
+    <string name="tv_progress_limit">65% towards limit</string>
+
+    <!-- Expense Category Analysis -->
+    <string name="tv_title_category_analysis">Category Analysis</string>
+    <string name="tv_category_total">Category Total</string>
+    <string name="tv_max_monthly_limit">Max Monthly Limit</string>
+    <string name="tv_expense_limit_percentage">65% towards montly limit</string>
+    <string name="cd_add_expense_button_category_analysis">Add Expense Button</string>
+    <string name="cd_list_of_expenses_for_the_given_category">list of expenses for the given category</string>
+    <string name="title_activity_budget_compose">BudgetComposeActivity</string>
+    <string name="title_activity_advanced_budget_compose">AdvancedBudgetCompose</string>
+
+    <!-- Auth Activity -->
+    <string name="tv_success">Biometric Auth Succeeded!</string>
+    <string name="btn_use_biometrics">Use Biometrics</string>
+    <string name="tv_click_the_button_below_to_authenticate_using_biometrics">Click the button below to login</string>
+    <string name="saved_email">saved_email </string>
+    <string name="saved_password">saved_password </string>
+    <string name="login_with_biometrics">Login with biometrics</string>
+    <string name="currency_converter_title">Currency Converter</string>
+
+    <!-- Database Sync -->
+    <string name="tv_status_syncing">Syncing…</string>
+    <string name="tv_last_synced_update">Last synced: %1$s</string>
+    <string name="text_sync_complete">Sync complete ✅</string>
+    <string name="text_sync_failed">Sync failed ❌</string>
+    <string name="btn_save_notification">Save</string>
+    <string name="tv_how_often_would_you_like_to_receive_reminders">How often would you like to receive reminders?</string>
+
+    <!-- Dialog rewards -->
+    <string name="current_streak_title">🔥 Current Streak</string>
+    <string name="next_milestone_label">Next milestone: </string>
+    <string name="next_milestone_days">%d days</string>
+    <string name="tv_new_password">New Password</string>
+
+
+</resources>

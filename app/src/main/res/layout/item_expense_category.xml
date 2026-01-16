@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_dark"
+    android:padding="16dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivCategoryIcon"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:background="@color/surface_dark"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Medium"
+        app:strokeColor="@color/field_border"
+        app:strokeWidth="1dp"
+        app:tint="@color/brand_primary" />
+
+    <TextView
+        android:id="@+id/tvCategoryTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="sans-serif-bold"
+        android:text="Grocery"
+        android:textColor="@color/text_primary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivCategoryIcon"
+        app:layout_constraintTop_toTopOf="@id/ivCategoryIcon" />
+
+    <TextView
+        android:id="@+id/tvMaxMonthlyLimit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Limit: R3,500"
+        android:textColor="@color/text_secondary"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@id/tvCategoryTitle"
+        app:layout_constraintTop_toBottomOf="@id/tvCategoryTitle" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progressLimit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:indicatorColor="@color/expense_neon"
+        app:layout_constraintEnd_toStartOf="@id/tvLimitProgressPercentage"
+        app:layout_constraintStart_toStartOf="@id/tvCategoryTitle"
+        app:layout_constraintTop_toBottomOf="@id/tvMaxMonthlyLimit"
+        app:trackColor="@color/field_border"
+        app:trackCornerRadius="4dp"
+        app:trackThickness="6dp"
+        tools:progress="65" />
+
+    <TextView
+        android:id="@+id/tvLimitProgressPercentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:fontFamily="sans-serif-black"
+        android:text="65%"
+        android:textColor="@color/text_primary"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/progressLimit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/progressLimit" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

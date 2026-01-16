@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand Identity -->
+    <color name="brand_primary">#FF4D4D</color> <!-- Electric Red -->
+    <color name="brand_secondary">#1E1E1E</color> <!-- Deep Carbon -->
+    <color name="brand_accent">#FF3333</color> <!-- Vivid Red -->
+
+    <!-- Backgrounds -->
+    <color name="bg_dark">#121212</color> <!-- Near Black -->
+    <color name="surface_dark">#1C1C1C</color> <!-- Card Surface -->
+
+    <!-- Status Colors (Optimized for Dark Mode) -->
+    <color name="income_neon">#00E676</color> <!-- High-vis Green -->
+    <color name="expense_neon">#FF4D4D</color> <!-- High-vis Red -->
+    <color name="savings_neon">#4DABFF</color> <!-- High-vis Blue -->
+
+    <!-- Typography -->
+    <color name="text_primary">#FFFFFF</color> <!-- Pure White -->
+    <color name="text_secondary">#9BA3AF</color> <!-- Slate Gray -->
+
+    <!-- UI Elements -->
+    <color name="field_border">#2E2E2E</color> <!-- Subtle dark border -->
+    <color name="nav_bg">#181818</color>
+</resources>

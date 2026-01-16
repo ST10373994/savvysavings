@@ -1,0 +1,141 @@
+package com.ssba.savvy_savings_app.budget
+
+import android.content.Intent
+import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import com.google.android.material.datepicker.CalendarConstraints
+import com.google.android.material.datepicker.DateValidatorPointBackward
+import com.google.android.material.datepicker.MaterialDatePicker
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+import com.ssba.savvy_savings_app.TransactionsActivity
+import com.ssba.savvy_savings_app.data.AppDatabase
+import com.ssba.savvy_savings_app.databinding.ActivityIncomeEntryBinding
+import com.ssba.savvy_savings_app.entities.Income
+import com.ssba.savvy_savings_app.models.IncomeEntryViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import java.util.Date
+
+/*
+ 	* Code Attribution
+ 	* Purpose:
+ 	*   - Accessing the authenticated user and checking if the user is logged in with Firebase Authentication
+ 	*   - Implementing the Material DatePicker for selecting dates in the app
+ 	* Author: Firebase Team / Android Developers
+ 	* Sources:
+ 	*   - Firebase Authentication - Check if User is Logged In: https://firebase.google.com/docs/auth/android/manage-users#check_if_a_user_is_signed_in
+ 	*   - Material DatePicker: https://developer.android.com/reference/com/google/android/material/datepicker/MaterialDatePicker
+*/
+
+class IncomeEntryActivity : AppCompatActivity() {
+
+    private val viewModel: IncomeEntryViewModel by viewModels()
+    private lateinit var binding: ActivityIncomeEntryBinding
+    private val auth = Firebase.auth
+    private lateinit var db: AppDatabase
+    private lateinit var incomeDao: com.ssba.savvy_savings_app.daos.IncomeDao
+
+    private var selectedDateMillis: Long? = null
+    private val datePicker by lazy {
+
+        val constraints = CalendarConstraints.Builder()
+            .setValidator(DateValidatorPointBackward.now()) // Allow only today or earlier
+            .build()
+
+        MaterialDatePicker.Builder.datePicker()
+            .setTitleText("Select a date")
+            .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
+            .setCalendarConstraints(constraints)
+            .build()
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+
+        // init DB & DAO
+        db = AppDatabase.getInstance(this)
+        incomeDao = db.incomeDao()
+
+        binding = ActivityIncomeEntryBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        binding.lifecycleOwner = this
+        binding.viewmodel = viewModel
+
+        setupDatePicker()
+        setupValidationObservers()
+        setupActions()
+    }
+
+    private fun setupDatePicker() {
+        binding.etDate.setOnClickListener {
+            datePicker.show(supportFragmentManager, "DATE_PICKER")
+        }
+        datePicker.addOnPositiveButtonClickListener { sel ->
+            selectedDateMillis = sel
+            val dateStr = datePicker.headerText
+            binding.etDate.setText(dateStr)
+            viewModel.date.value = dateStr
+        }
+    }
+
+    private fun setupValidationObservers() {
+        viewModel.titleError.observe(this)       { binding.etTitle.error       = it }
+        viewModel.dateError.observe(this)        { binding.etDate.error        = it }
+        viewModel.amountError.observe(this)      { binding.etAmount.error      = it }
+        viewModel.descriptionError.observe(this) { binding.etDescription.error = it }
+    }
+
+    private fun setupActions() {
+        binding.btnSave.setOnClickListener {
+            Log.d("IncomeEntryActivity", "Save button clicked")
+
+            if (viewModel.validateAll()) {
+                Log.d("IncomeEntryActivity", "Validation passed, saving income")
+
+                val title       = viewModel.titleOrName.value!!.trim()
+                val description = viewModel.description.value!!.trim()
+                val date        = Date(selectedDateMillis ?: System.currentTimeMillis())
+                val amountVal   = viewModel.amount.value!!.toDouble() // safe: validated >0
+
+                val income = Income(
+                    userId      = auth.currentUser?.uid.toString(),
+                    title       = title,
+                    date        = date,
+                    amount      = amountVal,
+                    description = description
+                )
+
+                lifecycleScope.launch(Dispatchers.IO) {
+                    incomeDao.upsertIncome(income)
+                    Log.d("IncomeEntryActivity", "Income saved to database")
+
+                    launch(Dispatchers.Main) {
+                        Toast.makeText(this@IncomeEntryActivity, "Income Saved", Toast.LENGTH_SHORT).show()
+
+                        // Intent to navigate to TransactionsActivity
+                        val intent = Intent(this@IncomeEntryActivity, TransactionsActivity::class.java)
+                        startActivity(intent)
+                        finish() // Finish this activity after navigating to the TransactionsActivity
+                        Log.d("IncomeEntryActivity", "Navigating to TransactionsActivity")
+                    }
+                }
+            } else {
+                Log.d("IncomeEntryActivity", "Validation failed")
+                Toast.makeText(this, "Please complete all required fields.", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        binding.btnCancel.setOnClickListener {
+            Log.d("IncomeEntryActivity", "Cancel button clicked, finishing activity")
+            finish()
+        }
+
+    }
+}
